@@ -1,0 +1,4 @@
+Bundle-Name: StudentWeb
+Bundle-SymbolicName: com.sdn.student.web
+Bundle-Version: 1.0.0
+Export-Package: com.sdn.student.web.constants
