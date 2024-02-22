@@ -10,5 +10,9 @@ public class MVCCommandNameConstants {
 	public static final String UPDATE_STUDENT_JSP="/updateStudent.jsp";
 	public static final String VIEW_STUDENT_BY_NAME_URL="viewStudentByNameRenderURL";
 	public static final String VIEW_STUDENT_BY_NAME_JSP="/viewStudentByName.jsp";
+	public static final String VIEW_STUDENT_SC_JSP="/view-student-sc2.jsp";
+	public static final String VIEW_STUDENT_SC_URL="/viewStudentSCURL";
+
+
 
 }
