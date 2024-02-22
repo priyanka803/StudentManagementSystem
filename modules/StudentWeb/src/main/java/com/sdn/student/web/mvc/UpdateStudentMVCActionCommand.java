@@ -2,11 +2,16 @@ package com.sdn.student.web.mvc;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand;
+import com.liferay.portal.kernel.servlet.SessionErrors;
+import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.sdn.student.web.constants.MVCCommandNameConstants;
 import com.sdn.student.web.constants.StudentPortletKeys;
 import com.sdn.student.web.model.Student;
 import com.sdn.student.web.service.StudentLocalService;
+
+import java.nio.channels.SeekableByteChannel;
+
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletException;
@@ -38,7 +43,9 @@ public class UpdateStudentMVCActionCommand implements MVCActionCommand {
 		Student student=null;
 		try {
 			student = studentLocalService.getStudent(studentId);
+			SessionMessages.add(actionRequest, "success");
 		} catch (PortalException e) {
+			SessionErrors.add(actionRequest, "error");
 			e.printStackTrace();
 		}
 		student.setFirstName(firstName);

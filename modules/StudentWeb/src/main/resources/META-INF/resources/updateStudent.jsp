@@ -26,4 +26,7 @@
 <aui:input name="course" label="Course" type="text" value="${student.getCourse()}"></aui:input>
 <aui:input name="email" label="Email" type="text" value="${student.getEmail()}"></aui:input>
 <aui:button type="submit" value="update" name="submitForm"></aui:button>
+<liferay-ui:success key="success" message="student updated successfully...."/>
+<liferay-ui:error key="error" message="something went wrong...."/>
+
 </aui:form>

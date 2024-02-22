@@ -19,7 +19,7 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td id="fisrt-name"></td>
+			<td id="first-name"></td>
 			<td id="last-name"></td>
 			<td id="course"></td>
 			<td id="email"></td>
@@ -32,7 +32,6 @@
 
 
 $("#<portlet:namespace/>fetch-student").on('click',function(){
-alert("mai chl gya");
    var studentFirstName = $("#<portlet:namespace/>firstName").val();
 
 Liferay.Service(
@@ -41,18 +40,16 @@ Liferay.Service(
     firstName: studentFirstName
 },
 function(obj) {
-    console.log(obj);
-    alert("obj--->"+obj);
      var jsonObject = JSON.stringify(obj);
-     console.log("jsonObject values "+jsonObject);
+     
      var parseData = JSON.parse(jsonObject);
-     console.log("parseData-->"+parseData.course);
+     
+     $("#first-name").html(parseData.firstName);
+     $("#last-name").html(parseData.lastName);
+     $("#course").html(parseData.course);
+     $("#email").html(parseData.email);
+     
 }
 );
-
-
-
-
-
 })
 </aui:script>
